@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="description">
+	<meta name="keywords" content="keywords">
+	<meta name="author" content="Will Campbell">
+	<title>Title</title>
+	<link rel="stylesheet" href="../../styles/unitStyle.css">
+</head>
+
+<body id="unitContent">
+	<article id="unitArticle">
+		
+		<!--*******************	PAGE HEADER	*******************-->
+		<header id="pageHeader"></header>
+<!--		***********************************************CONTENT*********************************************** -->
+		<header id="unitHeader">Lesson Introduction</header>
+			<p class="unitText">Content Here</p>
+<!--	***********************************************END CONTENT*********************************************** -->
+<!--*******************	FOOTER	*******************-->
+		<!--********	pagination	********-->
+		<p id="pvs_nxt_lsn"></p>
+	</article>
+
+	<!--*******************	SIDEBAR	*******************-->
+	<aside id="unitSidebar">
+		<picture>
+			<img id="sideImg" src="" alt="" style="max-width: 250px">
+		</picture>
+		<!--********	unit content	********-->
+		<div class="contentHead">Unit Contents</div>
+		<div id="linkBuild"></div>
+		
+		<div class="contentHead">your progress</div>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+	</aside>
+	<!--	***********************************************JAVASCRIPT*********************************************** -->
+	<script src="../../scripts/unitSidebar.js"></script>
+	<!--	sidebar toggle script, doesn't work in seperate file-->
+	<script>
+								//  unitLinks(unit, lesson, topic, intro)
+		window.onload = unitLinks("u3a", 0, 3, 1);
+		var k;
+		var toggler = document.getElementsByClassName("caret");
+		var tl = toggler.length;
+
+		for (k = 0; k < tl; k++) {
+			if (k == 0) {
+				//this ^ changes every LESSON, NOT page
+				toggler[k].parentElement.querySelector(".topicList").classList.toggle("active");
+				toggler[k].classList.toggle("caret-down");
+			} else {
+				toggler[k].addEventListener("click", function() {
+					this.parentElement.querySelector(".topicList").classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+			}
+		}
+	</script>
+</body>
+</html>
