@@ -184,29 +184,3 @@ function sidebarCircAdj(unit, lesson, topic) {
 	fnd = document.getElementsByClassName("listCir")[PvsCircNumbAdjst];
 	fnd.className = "listCir listCirChng";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
