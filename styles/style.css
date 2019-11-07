@@ -1,0 +1,517 @@
+/* CSS Document */
+
+* {
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 24px;
+}
+
+/*************************************************************************/
+/*Page setup*/
+html {
+/*	One scrollbar fix*/
+	-ms-overflow-style: none;  /*	for IE*/
+	overflow: hidden;
+	overflow: clip;
+/*	------------------------*/
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/*One scrollbar fix for chrome*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+	margin: 0;
+	margin-top: 10px;
+	padding: 0;
+}
+
+#globalContainer {
+	height: 98vh;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: minmax(140px, .7fr) 0 4fr;
+	grid-template-columns: minmax(140px, .7fr) 0 4fr;
+	-ms-grid-rows: 0px 0 90px 0 3fr 0 0px;
+	grid-template-rows: 0px 90px 3fr 0px;
+	grid-gap: 0 50px;
+	    grid-template-areas: 
+		"banner banner"
+		"header header"
+		"aside main"
+		"footer footer";
+	place-content: stretch;
+	place-items: stretch;
+	background-color: #fff;
+}
+
+#globalBanner {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	grid-area: banner;
+}
+
+#globalHeader {
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	grid-area: header;
+	background-color: #1E1E1E;
+}
+
+#globalAside {
+	-ms-grid-row: 5;
+	-ms-grid-column: 1;
+	grid-area: aside;
+	background-color: #1E1E1E;
+}
+
+#globalMain {
+	-ms-grid-row: 5;
+	-ms-grid-column: 3;
+	grid-area: main;
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+}
+
+#globalFooter {
+	-ms-grid-row: 7;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	grid-area: footer;
+}
+
+/*************************************************************************/
+/*logo header setup*/
+#logoContainer {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: auto 0 auto 0 1fr;
+	grid-template-columns: auto auto 1fr;
+	grid-gap: 0;
+	grid-template-areas: 
+		"logoimg logotxt logoright";
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+#logoImg {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	grid-area: logoimg;
+	-ms-flex-item-align: start;
+	-ms-grid-row-align: start;
+	align-items: start;
+}
+
+#logoImg img {
+	max-height: 75px;
+	padding-top: 15px;
+	margin-left: 10px;
+}
+
+#logoTxt {
+	-ms-grid-row: 1;
+	-ms-grid-column: 3;
+	grid-area: logotxt;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+}
+
+#logoTxt span {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-left: 1rem;
+	text-align: left;
+}
+
+#logoRight {
+	-ms-grid-row: 1;
+	-ms-grid-column: 5;
+	grid-area: logoright;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	-ms-grid-column-align: end;
+	justify-self: end;
+	color: #fff;
+}
+
+#logoHam {
+	display: none;
+}
+
+/*	--------------------------*/
+/*	(DOM, ID, classes)*/
+#courseList {
+	text-align: left;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+#courseList li {
+	margin-top: .5rem;
+	cursor: pointer;
+}
+
+#courseList p {
+	margin-top: 0;
+}
+
+#mainNav, #mainNav a, #mainNav ul li a {
+	font-size: 1.3vw;
+	line-height: normal;
+}
+
+#mainNav ul {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+#mainNav ul li a {
+	font-size: .9vw;
+	line-height: normal;
+}
+
+#mainNav ul, #mainNav ul a {
+	list-style-type: none;
+	font-size: 1vw;
+	margin-top: 1rem;
+	margin-left: -.5rem;
+}
+
+#sidebarNav {
+	margin-left: 1rem;
+	margin-top: 1.3vw;
+}
+
+.linkText {
+	text-decoration: none;
+}
+
+.pageText {
+	font-family: Arial,Helvetica,sans-serif;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.secText {
+	font-family: Arial,Helvetica,sans-serif;
+	color: #1B1819;
+}
+
+.security {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+	background-color: #969;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/*************************************************************************/
+/*Nav setup*/
+hr {
+	margin: 0;
+	padding: 0;
+}
+
+.bibLink {
+	margin: 0;
+	margin-top: 1vw;
+	padding: 0;
+}
+
+.crseNavSubHead:hover, .bibLink:hover {
+	border-bottom: 2px solid #3E3E3E;
+	margin-top: 5px;
+}
+
+.crseNavSubHead:hover, a:hover {
+	font-weight: 700;
+}
+
+.crseNavActive {
+	border-bottom: 2px solid #6664DD;
+	color: #6664DD;
+}
+
+#courseNav {
+	font-size: 1rem;
+	margin-top: 0;
+}
+
+.crseNavHeader {
+	font-size: .9vw;
+	color: #515151;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: 600;
+	border: 0px;
+	margin: 0px;
+	margin-top: .5vw;
+	padding: 0px;
+	vertical-align: baseline;
+	text-align: center;
+}
+
+.crseNavSubHead {
+	display: inline-block;
+	font-size: 1vw;
+	color: #fff;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: 500;
+	margin: .5vw 0 .5vw 0;
+	text-align: center;
+	cursor: pointer;
+	transition: border;
+	transition-timing-function: ease;
+}
+
+.crseNavSubLink {
+	text-decoration: none;
+}
+
+.crseNavHr {
+	width: 50%;
+}
+
+.navHeader2 {
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+/*************************************************************************/
+/*Main content setup*/
+article {
+	max-width: 80%;
+	line-height: 25px;
+}
+
+header {
+	color: #888582;
+	font-family: GenerisSerifComMedium, Georgia, Times, serif;
+	font-size: 1.25em;
+	line-height: 1.4em;
+	font-weight: bold;
+	font-style: oblique;
+	margin-top: 30px;
+}
+
+p {
+	margin-left: 2rem;
+	margin-top: 15px;
+}
+
+#mainContent {
+	height: 100%;
+	width: 100%;
+}
+
+.alone {
+	text-indent: 2rem;
+}
+
+.centerMedia {
+	margin: 0 auto;
+	width: 474px;
+}
+
+.digitalImage {
+	max-width: 400px;
+	height: auto;
+}
+
+.introUL {
+	margin-left: 4rem;
+}
+
+.mainText {
+	color: #3d3938;
+	font-family: FrutigerNeue, Helvetica, Arial, sans-serif;
+	font-size: 100.01%;
+}
+
+li.smBullet {
+	margin-left: 4rem;
+	margin-top: 15px;
+}
+
+ul.smList {
+	list-style-type: none;
+	line-height: 25px;
+	margin-top: 15px;
+}
+
+header.subList {
+	margin-left: 2rem;
+	color: #3d3938;
+	font-family: GenerisSerifComMedium, Georgia, Times, serif;
+	font-size: 1em;
+	line-height: 1.4em;
+	font-weight: bold;
+	font-style: oblique;
+	margin-top: 30px;
+}
+
+p.subList {
+	margin-left: 4rem;
+	margin-top: 15px;
+}
+
+ul.subSubList {
+	margin-left: 4rem;
+	list-style-type: none;
+	line-height: 25px;
+	margin-top: 15px;
+}
+
+li.subSubListContent {
+	margin-left: 2rem;
+	list-style-type: none;
+	margin-top: 15px;
+}
+
+li.subSubListHead {
+	font-family: GenerisSerifComMedium, Georgia, Times, serif;
+	font-size: 1em;
+	line-height: 1.4em;
+	font-style: oblique;
+	margin-top: 15px;
+}
+
+/*************************************************************************/
+
+.overlay {
+	height: 0%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	background-color: rbga(0,0,0,0.9);
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.overlay-content {
+	position: relative;
+	top: 25%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+	color: #f1f1f1;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+}
+
+/*************************************************************************/
+@media only screen and (max-width: 768px), print {
+	#globalContainer {
+		-ms-grid-columns: 0px 0px 4fr;
+		grid-template-columns: 0 4fr;
+	}
+	
+	#globalAside {
+		display: none;
+	}
+	
+	#globalContainer, #globalAside {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	
+	#logoTxt span {
+		font-size: 1.2rem;
+	}
+	
+	#logoHam {
+		display: inline-block;
+		position: fixed;
+		top: 40px;
+		right: 12px;
+		background-color: #1E1E1E;
+		color: #fff;
+		font-size: 2rem;
+		cursor: pointer;
+		z-index: 1;
+	}
+}
+
+@media only screen and (max-width: 768px), (min-width: 768px) {
+	.overlay {
+		overflow-y: auto;
+	}
+	
+	.overlay-content p {
+		display: block;
+	}
+	
+	.overlay-content #overlayBib {
+		margin-bottom: 50px;
+	}
+	
+	.overlay-content .crseNavHeader {
+		font-size: 18px;
+		text-align: center;
+	}
+	
+	.overlay-content .crseNavSubHead {
+		border-bottom: none;
+		margin-top: 5px;
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	.overlay a {
+		font-size: 20px;
+	}
+	
+	.overlay .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	#logoTxt span {
+		font-size: .8rem;
+	}
+}
+
+@media print {
+	#mainContent, iframe {
+		overflow-y: visible;
+	}
+}
