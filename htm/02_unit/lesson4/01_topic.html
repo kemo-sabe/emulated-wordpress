@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="description">
+	<meta name="keywords" content="keywords">
+	<meta name="author" content="Will Campbell">
+	<title>Title</title>
+	<link rel="stylesheet" href="../../../styles/unitStyle.css">
+</head>
+
+<body id="unitContent">
+	<article id="unitArticle">
+		
+		<!--*******************	PAGE HEADER	*******************-->
+		<header id="pageHeader"></header>
+		<!--********	previous lesson	********-->
+		<p class="pvs_nxt_lsn">
+																										<!--	(unit, lesson, first, direction)-->
+			<span class="backLsn" onClick="window.parent.pageNav('u2a', 4, 0, 0);">&#8632; Back to Lesson</span>
+		</p>
+<!--		***********************************************CONTENT*********************************************** -->
+		<p class="unitText alone">Content alone</p>
+
+		<header id="unitHeader">Content Header</header>
+			<p class="unitText">Content paragraph</p>
+
+		<header class="subList">More Content Header</header>
+			<p class="unitText subList">More Content paragraph</p>
+<!--	***********************************************END CONTENT*********************************************** -->
+<!--*******************	FOOTER	*******************-->
+		<!--********	complete button	********-->
+		<button id="completeButton" onClick="progBar('u2aInfo', 'u2a', 4, 1, 0);">MARK COMPLETE</button>
+		<!--********	pagination	********-->
+		<p id="pvs_nxt_lsn">
+																									<!--	 ('u1', lesson, first, direction)-->
+<!--			<span class="pvsLsn" onClick="window.parent.pageNav('u2a', 4, 0, 0);"> &larr; Previous Topic</span>-->
+			<span class="nxtLsn" onClick="window.parent.pageNav('u2a', 4, 0, 1);">Next Topic &rarr;</span>
+		</p>
+	</article>
+
+	<!--*******************	SIDEBAR	*******************-->
+	<aside id="unitSidebar">
+		<picture>
+			<img id="sideImg" src="" alt="" style="max-width: 250px">
+		</picture>
+		<!--********	unit content	********-->
+		<div class="contentHead">Unit Contents</div>
+		<div id="linkBuild"></div>
+		
+		<div class="contentHead">your progress</div>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+	</aside>
+<!--	***********************************************JAVASCRIPT*********************************************** -->
+	<script src="../../../scripts/unitSidebar.js"></script>
+	<!--	sidebar toggle script, doesn't work in seperate file-->
+	<script>
+								//  unitLinks(unit, lesson, topic, intro)
+		window.onload = unitLinks("u2a", 4, 1, 0);
+		var k;
+		var toggler = document.getElementsByClassName("caret");
+		var tl = toggler.length;
+
+		for (k = 0; k < tl; k++) {
+			if (k == 3) {
+				//this ^ changes every LESSON, NOT page
+				toggler[k].parentElement.querySelector(".topicList").classList.toggle("active");
+				toggler[k].classList.toggle("caret-down");
+			} else {
+				toggler[k].addEventListener("click", function() {
+					this.parentElement.querySelector(".topicList").classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+			}
+		}
+	</script>
+</body>
+</html>
