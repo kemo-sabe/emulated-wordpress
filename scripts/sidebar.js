@@ -166,4 +166,3 @@ function checkPage(infoName, lesson, topic) {
 function unitAdd(infoName, unit, lesson, topic) {
 	eval(infoName)[lesson].pageComplete[topic] = pageOrder[unit][0].pageOrder[lesson][topic];
 }
-
