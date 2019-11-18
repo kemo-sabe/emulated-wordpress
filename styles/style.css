@@ -36,7 +36,7 @@ body {
 	display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: minmax(140px, .7fr) 0 4fr;
-	grid-template-columns: minmax(140px, .7fr) 0 4fr;
+	grid-template-columns: minmax(140px, .7fr) 4fr;
 	-ms-grid-rows: 0px 0 90px 0 3fr 0 0px;
 	grid-template-rows: 0px 90px 3fr 0px;
 	grid-gap: 0 50px;
