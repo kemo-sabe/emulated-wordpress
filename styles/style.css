@@ -12,7 +12,7 @@
 /*Page setup*/
 html {
 /*	One scrollbar fix*/
-	-ms-overflow-style: none;  /*	for IE*/
+	-ms-overflow-style: hidden;  /*	for IE*/
 	overflow: hidden;
 	overflow: clip;
 /*	------------------------*/
